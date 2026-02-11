@@ -41,7 +41,7 @@ Despite its improvements, Azure Durable Functions still struggles with two major
 * **The Data Shipping Penalty**: Durable Functions remains a data-shipping architecture. Data must still be serialized and sent to storage (the Task Hub) between every function call, which remains slow and expensive for massive datasets compared to colocated compute.
 * **No Direct Point-to-Point Communication**: Functions still cannot address each other directly. They rely on queues and blobs for all coordination, maintaining the high latency "storage as a blackboard" bottleneck that the authors specifically critiqued as an anti-pattern for distributed systems.
 
-### 2. Your Verdict
+### 2. My Verdict
 
 In my opinion, Azure Durable Functions represents a massive leap in developer productivity but only an incremental step in system physics. It successfully "hides" the limitations of serverless (statelessness and timeouts) behind a brilliant orchestration layer. However, it does not solve the fundamental I/O and networking inefficiencies identified by Hellerstein et al. It is a successful workaround that works within the current cloud's limitations rather than truly revolutionizing the code-data relationship the authors envisioned.
 
